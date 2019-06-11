@@ -25,3 +25,8 @@ INSERT INTO char_data_types VALUES
 COPY char_data_types TO 'D:\PostgreSQL\Exports\typetest.txt'
 WITH (FORMAT CSV, HEADER, DELIMITER '|');
 
+-- using serial numbers in SQL; there are also different sizes of serial numbers like smallserial, serial and bigserial.
+CREATE TABLE people (
+	id serial,
+	person varchar(100)
+);
