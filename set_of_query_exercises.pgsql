@@ -30,3 +30,17 @@ CREATE TABLE people (
 	id serial,
 	person varchar(100)
 );
+
+-- number data types example
+CREATE TABLE number_data_types (
+	numeric_column numeric(20,5),
+	real_column real,
+	double_precision_column double precision
+);
+
+INSERT INTO number_data_types VALUES
+(.7, .7, .7),
+(2.12345, 2.12345, 2.12345),
+(2.1234567890, 2.1234567890, 2.1234567890);
+
+SELECT * FROM number_data_types;
