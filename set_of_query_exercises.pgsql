@@ -66,3 +66,21 @@ INSERT INTO date_time_types VALUES
 (now(), '1 week');
 
 SELECT * FROM date_time_types;
+
+-------------------------------------------------------------------------------------
+
+-- TYPE CONVERSIONS WITH THE CAST FUNCTION
+
+-- Will work, because the target data type can accomodate the original value.
+SELECT timestamp_column, CAST(timestamp_column AS varchar(10))
+FROM date_time_types;
+
+-- Will also work.
+SELECT
+	numeric_column,
+	CAST(numeric_column AS integer),
+	CAST(numeric_column AS varchar(6))
+FROM number_data_types;
+
+-- Will not work, because the target data type can not accomodate the original value.
+SELECT CAST(char_column AS integer) FROM char_data_types;
