@@ -24,3 +24,17 @@ GROUP BY
 ORDER BY
     1
 ;
+
+                                                                                
+# Every customers last rental date
+SELECT
+  concat(c.first_name, ' ', c.last_name) as Fullname,
+  c.email as "Email Address",
+  max(r.rental_date) as "Last Rental Date"
+FROM
+  customer c,
+  rental r
+WHERE
+  c.customer_id = r.customer_id
+GROUP BY
+  c.customer_id;
