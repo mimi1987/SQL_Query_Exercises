@@ -38,3 +38,13 @@ WHERE
   c.customer_id = r.customer_id
 GROUP BY
   c.customer_id;
+
+
+# Revenue per month
+SELECT
+  left(payment_date, 7) as "Year/Month",
+  sum(amount) as "Monthly Revenue"
+FROM
+  payment
+GROUP BY
+  1;
